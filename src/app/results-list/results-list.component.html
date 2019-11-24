@@ -2,3 +2,7 @@
     <!-- Implement result list here -->
     Results List
 </div>
+
+    <div *ngFor="let item of filteredItems.data">
+        <img src="{{item.images.original.url}}">
+    </div>
