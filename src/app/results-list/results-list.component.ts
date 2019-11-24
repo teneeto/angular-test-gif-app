@@ -27,8 +27,6 @@ export class ResultsListComponent implements OnInit {
       next: items => {
         this.items = items;
         this.filteredItems = this.items;
-        console.log('change', this.test);
-        
       },
       error: err => this.errorMessage = err
     });

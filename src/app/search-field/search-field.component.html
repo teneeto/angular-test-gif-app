@@ -1,7 +1,7 @@
 
 <h1>Search: {{this.searchInputService.searchValue}}</h1>
 <hr>
-<div class="row">
+<div class="row d-flex">
     <div class="col-md-12">
         <form #searchForm="ngForm" (ngSubmit)="search(searchForm.value)" class="form-horizontal">
             <div class="form-group">
@@ -15,7 +15,7 @@
                         placeholder="type your search here..."
                     />
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-6">
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
             </div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <img class="event-image" [src]="imageDetails?.images?.original?.url" alt="imageDetails?.images?.original?.url" />
+
+  <div class="row">
+    <div class="col-md-11">
+      <h2>{{ imageDetails?.title}}</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div><strong>type:</strong> {{ imageDetails?.type }}</div>
+      <div><strong>Image Source:</strong> {{ imageDetails?.source_tld }}</div>
+      <div><strong>Source Url:</strong> <a [href]="imageDetails?.source"></a> {{ imageDetails?.source }}</div>
+    </div>
+    <div class="col-md-6">
+      
+    </div>
+  </div>
+</div>
