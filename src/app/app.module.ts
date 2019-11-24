@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchFieldComponent } from './search-field/search-field.component';
 import { ResultsListComponent } from './results-list/results-list.component';
+import { SearchInputService } from './search-field/search-input.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { ResultsListComponent } from './results-list/results-list.component';
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    SearchInputService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

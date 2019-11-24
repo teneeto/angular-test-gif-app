@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../search-field/giphy-api.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { SearchService } from './giphy-api.service';
 
 @Component({
   selector: 'app-results-list',
@@ -10,14 +10,24 @@ export class ResultsListComponent implements OnInit {
   errorMessage: string;
   items = {};
   filteredItems ={};
+  @Input() test;
   constructor(private searchService: SearchService ) { }
 
   ngOnInit(): void {
-    this.searchService.getSearchItems().subscribe({
+    this.searchService.getSearchItems(this.test).subscribe({
       next: items => {
         this.items = items;
         this.filteredItems = this.items;
-        console.log(this.filteredItems);
+      },
+      error: err => this.errorMessage = err
+    });
+  }
+  ngOnChanges(){
+    this.searchService.getSearchItems(this.test).subscribe({
+      next: items => {
+        this.items = items;
+        this.filteredItems = this.items;
+        console.log('change', this.test);
         
       },
       error: err => this.errorMessage = err

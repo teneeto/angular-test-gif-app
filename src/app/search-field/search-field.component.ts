@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchInputService } from './search-input.service';
 
 
 @Component({
@@ -8,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFieldComponent implements OnInit {
     name = 'Search Field';
-    constructor() {
+    constructor(private searchInputService: SearchInputService) {
+    }
+    search(formValues){
+      this.searchInputService.getSearchInput(formValues.searchInput)
     }
 
     ngOnInit() {
