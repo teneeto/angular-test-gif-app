@@ -7,6 +7,8 @@ import { SearchService } from './giphy-api.service';
   styleUrls: ['./results-list.component.css']
 })
 export class ResultsListComponent implements OnInit {
+  imageWidth: number = 150;
+  imageMargin: number = 2;
   errorMessage: string;
   items = {};
   filteredItems ={};

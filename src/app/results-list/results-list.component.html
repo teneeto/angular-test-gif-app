@@ -1,9 +1,9 @@
 <div>
     <!-- Implement result list here -->
     <h3>Results List</h3>
-    <div class="row">
-    <div class="col-md-3" [routerLink]="['/images',item?.id]" *ngFor="let item of filteredItems.data">
-        <img src="{{item?.images?.original?.url}}" alt="{{item?.title}}" title="{{item?.title}}">
+<div class="row ">
+    <div class="col-md-3 text-center img-fluid img-thumbnail" [routerLink]="['/images',item?.id]" *ngFor="let item of filteredItems.data">
+        <img class="mx-auto" [style.width.px]="imageWidth" [style.margin.px]="imageMargin" src="{{item?.images?.original?.url}}" alt="{{item?.title}}" title="{{item?.title}}">
     </div>
 </div>
 </div>
