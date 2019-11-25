@@ -3,7 +3,7 @@ import { SearchService } from '../results-list/giphy-api.service';
 
 @Injectable()
 export class SearchInputService {
-  searchValue: string = "cat";
+  searchValue: string = "bad habit";
 
 
   getSearchInput(formValue: string) {

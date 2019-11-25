@@ -13,7 +13,7 @@ export class ResultsListComponent implements OnChanges {
   items = [];
   filteredItems =[];
   btnText: string = "show all"
-  sliceLimit: number = 8
+  sliceLimit: number = 12
   @Input() test;
   constructor(private searchService: SearchService ) { }
 
@@ -36,7 +36,7 @@ export class ResultsListComponent implements OnChanges {
     });
   }
   showAll(){
-    if (this.btnText === "show all" && this.sliceLimit === 8){
+    if (this.btnText === "show all" && this.sliceLimit === 12){
       this.filteredItems = this.items;
       return this.btnText = "show less" 
     }else{
