@@ -36,7 +36,7 @@ export class ResultsListComponent implements OnChanges {
     });
   }
   showAll(){
-    if (this.btnText === "show all"){
+    if (this.btnText === "show all" && this.sliceLimit === 8){
       this.filteredItems = this.items;
       return this.btnText = "show less" 
     }else{
