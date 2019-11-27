@@ -9,7 +9,8 @@ import { SearchInputService } from './search-input.service';
 })
 export class SearchFieldComponent implements OnInit {
     name = 'Search Field';
-    constructor(private searchInputService: SearchInputService) {
+    searchInput: string;
+    constructor(public searchInputService: SearchInputService) {
     }
     search(formValues){
       this.searchInputService.getSearchInput(formValues.searchInput)
