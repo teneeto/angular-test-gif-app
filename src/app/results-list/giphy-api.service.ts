@@ -1,11 +1,11 @@
-import { Injectable, OnChanges } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
 import { SearchInputService } from "../search-field/search-input.service";
 
 @Injectable({
-    providedIn: "root"
+    providedIn: "root",
 })
 export class SearchService {
     
@@ -17,15 +17,16 @@ export class SearchService {
     // searchValue: string = this.searchInputService.searchValue
     // private searchUrl: string = `http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=${this.searchValue}`
 
-    getSearchItems(value): Observable<any> {
-        const searchUrl = `http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=${value}&limit=${20}`;
+    getSearchItems(value: string): Observable<any> {
+        const searchUrl = `http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=${value}&limit=${1000}`;
         return this.http.get<any>(searchUrl).pipe(
-            tap(data => (items = data.data)),
+            tap(data => {
+              (items = data.data)
+        }),
             catchError(this.handleError)
         );
     }
     getItems(id: string) {
-      
         return items.find(detail => detail.id === id)
     }
 

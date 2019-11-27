@@ -17,15 +17,6 @@ export class ResultsListComponent implements OnChanges {
   @Input() test;
   constructor(private searchService: SearchService ) { }
 
-  // ngOnInit(): void {
-  //   this.searchService.getSearchItems(this.test).subscribe({
-  //     next: items => {
-  //       this.items = items;
-  //       this.filteredItems = this.items;
-  //     },
-  //     error: err => this.errorMessage = err
-  //   });
-  // }
   ngOnChanges(){
     this.searchService.getSearchItems(this.test).subscribe({
       next: items => {
@@ -43,7 +34,5 @@ export class ResultsListComponent implements OnChanges {
       this.filteredItems = this.items.slice(0, this.sliceLimit);
       return this.btnText = "show all"
     }
-    
-
   }
 }
