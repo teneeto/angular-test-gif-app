@@ -18,7 +18,7 @@ export class SearchService {
     // private searchUrl: string = `http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=${this.searchValue}`
 
     getSearchItems(value: string): Observable<any> {
-        const searchUrl = `http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=${value}&limit=${1000}`;
+        const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=${value}&limit=${1000}`;
         return this.http.get<any>(searchUrl).pipe(
             tap(data => {
               (items = data.data)
